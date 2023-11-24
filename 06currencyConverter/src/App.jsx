@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { InputBox } from './components'
-import { useCurrencyInfo } from'./hooks/useCurrencyInfo'
+import  useCurrencyInfo  from'./hooks/useCurrencyInfo'
 import './App.css'
 
 
 function App() {
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState()
   const [from, setFrom] = useState("usd")
   const [to, setTo] = useState('inr')
   const [convertedAmount, setConvertedAmount] = useState(0)
@@ -45,8 +45,10 @@ function App() {
                             amount={amount}
                             currencyOption={options}
                             // eslint-disable-next-line no-unused-vars
-                            onCurrencyChange={(currency) => setAmount(amount)}
+                            onCurrencyChange={(currency) => setFrom(amount)}
                             selectCurrency={from}
+                            onAmountChange={(amount) =>
+                            setAmount(amount)}
                             
                         />
                     </div>
@@ -65,7 +67,7 @@ function App() {
                              currencyOption={options}
                              // eslint-disable-next-line no-unused-vars
                              onCurrencyChange={(currency) => setTo(currency)}
-                             selectCurrency={from}
+                             selectCurrency={to}
                              amountDisable
                             
                         />
