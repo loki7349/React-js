@@ -5,7 +5,7 @@ import './App.css'
 
 
 function App() {
-  const [amount, setAmount] = useState()
+  const [amount, setAmount] = useState("")
   const [from, setFrom] = useState("usd")
   const [to, setTo] = useState('inr')
   const [convertedAmount, setConvertedAmount] = useState(0)
@@ -21,7 +21,7 @@ function App() {
   }
 
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo(to))
+    setConvertedAmount(amount * currencyInfo)
   }
 
   return (
