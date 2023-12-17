@@ -14,9 +14,11 @@ return (
             </label>
             }
             <input type={type}
-            className={`${className}`}
+            className={`px-3 py-2 rounded-lg bg-white text-black outline-none focus:bg-gray-50 duration-100 border border-gray-200 w-full 
+            ${className}`}
             ref={ref} {...props}
-            id={id}/>
+            id={id}
+            />
     </div>
 )
 
